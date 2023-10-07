@@ -1,0 +1,138 @@
+<!-- 
+	Switches, if these get deleted, easyboard will not have the functionality 
+	they represent.
+
+	spamprotect adds a _nospam_ to each email to avoid bots to scan your page
+	for spamming
+
+	increase:x defines how many guestbook entries will be displayed at a time 
+	and enables the display of back / next links
+
+	owner:email defines the owner of the guestbook, each entry will be sent 
+	there as a copy
+-->
+<!-- dateformat:m-d-Y G:i:s -->
+<!-- spamprotect -->
+<!-- increase:10 -->
+
+<!-- ### The welcome message ### -->
+<!-- start:hello -->
+<center><table class="ciemna" style="margin: 20px; width: 480px;"><tr class="ciemna"><td>
+<ul type="disc">
+	<li><a href="goscie.php?action=view">przeglądaj księgę</a>
+	<li><a href="goscie.php?action=sign">dodaj wpis</a>
+</ul>
+</td></tr></table></center>
+<!-- end:hello -->
+
+<!-- ### The message displayed when someone tries to spam the book by reloading ### -->
+<!-- start:spam -->
+<center><table class="ciemna" style="margin: 20px; width: 480px;"><tr class="ciemna"><td>
+<div class="warning">Twój wpis już został dodany!</div>
+<ul type="disc">
+        <li><a href="goscie.php?action=view">przeglądaj księgę</a>
+        <li><a href="goscie.php?action=sign">dodaj wpis</a>
+</ul>
+</td></tr></table></center>
+<!-- end:spam -->
+
+<!-- ### The message displayed when someone forgot to enter a field ### -->
+<!-- ### the "field" comment  will get replaced with the missing field names ### -->
+<!-- start:forgottenfields -->
+<center><table class="ciemna" style="margin: 20px; width: 480px;"><tr class="ciemna"><td>
+<div class="warning">Musisz wypełnić jeszcze:</div>
+<!-- fields -->
+</td></tr></table></center>
+<!-- end:forgottenfields -->
+
+<!-- ### The message displayed when the entered email is invalid ### -->
+<!-- start:invalidemail -->
+<center><table class="ciemna" style="margin: 20px; width: 480px;"><tr class="ciemna"><td>
+<div class="warning">Podany adres e-mail jest nieprawidłowy.</div>
+</td></tr></table></center>
+<!-- end:invalidemail -->
+
+<!-- ### The message displayed when someone succesfully signed the guestbook ### -->
+<!-- start:thanks -->
+<center><table class="ciemna" style="margin: 20px; width: 480px;"><tr class="ciemna"><td>
+<div class="thanks">Wpis dodany.</div>
+<ul type="disc">
+	<li><a href="goscie.php?action=view">przeglądaj księgę</a>
+</ul>
+</td></tr></table></center>
+<!-- end:thanks -->
+
+
+<!-- ### The entry form, each input element will be added as data ### -->
+<!-- ### See the easyboard homepage for more info! ### -->
+<!-- start:form -->
+<center><table class="ciemna" style="margin: 20px; width: 480px;"><tr class="ciemna"><td>
+
+<script type="text/javascript" src="js/www.js"></script>
+<form action="goscie.php" method="post">
+<table>
+<tr>
+	<td>Imię:*</td>
+	<td><input type="text" name="imie" size="40" value="%imie%"></td>
+</tr>
+<tr>
+	<td>Email:*</td>
+	<td><input type="text" name="email" size="40" value="%email%"></td>
+</tr>
+<tr>
+	<td>www:</td>
+	<td><input type="text" id="www" name="www" size="40" value="%www%" onchange="sprawdz_www();"></td>
+</tr>
+<tr>
+	<td>Treść:*</td>
+	<td><textarea name="treść" cols="65" rows="10">%treść%</textarea></td>
+</tr>
+<tr>
+	<td colspan="2" align="center">
+<!-- ### these two fields are mandatory ### -->
+<input type="hidden" name="required" value="imie,email,treść">
+<input type="hidden" name="action" value="verify">
+
+<input type="submit" value="Dodaj wpis">
+</td>
+</tr>
+</table>
+</form>
+<a href="goscie.php?action=view">przeglądaj księgę</a>
+</td></tr></table></center>
+<!-- end:form -->
+
+<!-- ### The display of the book ### -->
+<!-- start:display -->
+
+<center><table class="ciemna" style="margin: 20px; width: 480px; text-align: center;"><tr class="ciemna"><td>
+<!-- start:back --><a href="backurl">poprzednie</a> | <!-- end:back -->
+<a href="goscie.php?action=sign">dodaj wpis</a>
+<!-- start:next --> | <a href="nexturl">następne</a><!-- end:next -->
+</td></tr></table></center>
+
+<!-- start:item -->
+<center>
+	<table class="ciemna" style="margin: 20px; width: 480px;">
+	<tr class="naglowek_wpisu"><td>
+		<a href="javascript:ShowHide('wpis%entryid%');" onclick="this.blur();">#%entryid%</a> Imię: %imie%; Data: %entrydate%<br>
+	</td></tr>	
+	<tr class="ciemna"><td>
+		<div id="wpis%entryid%" class="wpis">
+		%treść%<br>
+		<div style="text-align: right;">
+			<a href="mailto:%email%?body=Usun _nospam_ z adresu email.">e-mail</a> | <a href="%www%">www</a>
+		</div>
+		</div>
+	</td></tr>
+	</table>
+</center>
+<!-- end:item -->
+
+<center><table class="ciemna" style="margin: 20px; width: 480px; text-align: center;"><tr class="ciemna"><td>
+<!-- start:back --><a href="backurl">poprzednie</a> | <!-- end:back -->
+<a href="goscie.php?action=sign">dodaj wpis</a>
+<!-- start:next --> | <a href="nexturl">następne</a><!-- end:next -->
+</td></tr></table></center>
+
+<!-- end:display -->

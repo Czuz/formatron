@@ -1,0 +1,189 @@
+/*
+ * Copyright© 2007 Czuz
+ * Licencja: MIT Licence https://github.com/Czuz/formatron/blob/main/LICENSE
+ */
+
+body {
+	background-color: #11181e; 
+	background-image: url(grafika/bg.jpg);
+	background-attachment: fixed;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	padding: 0px;
+	color: #c4c4c4;	
+	scrollbar-arrow-color: #11181e;
+	scrollbar-base-color: #262e39;
+	scrollbar-track-color: #262e39;
+	scrollbar-face-color: #253046;
+	scrollbar-highlight-color: #212c41;
+	scrollbar-3dlight-color: #192026;
+	scrollbar-darkshadow-color: #2a364f;
+	scrollbar-shadow-color: #212b40;
+	font-family: Verdana,sans-serif;
+	font-size: 11px;
+}
+
+textarea {
+	margin: 5px;
+	background-color: #11181e;
+	color: #c4c4c4;	
+	border: 1px solid #c4c4c4;
+	font-family: Verdana,sans-serif;
+	font-size: 11px;
+}
+
+textarea:hover {
+	background-color: #333333;
+}
+
+input {
+	margin: 5px;
+	background-color: #11181e;
+	color: #c4c4c4;
+	border: 1px solid #c4c4c4;
+	font-family: Verdana,sans-serif;
+	font-size: 11px;
+}
+
+input:hover {
+	background-color: #333333;
+}
+
+select {
+	background-color: #11181e;
+	color: #c4c4c4;
+	border: 0px;
+	text-align: left;
+	font-family: Verdana,sans-serif;
+	font-size: 11px;
+}
+
+select:hover {
+	background-color: #333333;
+}
+
+a {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: #c4c4c4;
+	text-decoration: none;
+}
+
+h1 {
+	color: #c4c4c4;
+	font-family: Verdana,sans-serif;
+	font-size: 14px;
+}
+
+h2 {
+	color: #c4c4c4;
+	font-family: Verdana,sans-serif;
+	font-size: 11px;
+}
+
+table {
+	text-align: left;
+	font-family: Verdana,sans-serif;
+	margin-bottom: 15px;
+}
+
+table.strona {
+	width: 100%;
+	border: 0px;
+	text-align: center;
+}
+
+td.bok {
+	width: 120px;
+	vertical-align: top;
+}
+
+td.srodek {
+	vertical-align: top;
+}
+
+.jasna {
+	background-color: #eeeeee;
+	color: #11181e;
+	border: 2px solid #11181e;
+}
+
+.ciemna {
+	background-color: #11181e;
+	color: #c4c4c4;
+	border: 1px solid #c4c4c4;
+}
+
+tr.jasna a {
+	color: #11181e;
+	text-decoration: underline;
+}
+
+tr.jasna a:hover {
+	color: #11181e;
+	text-decoration: none;
+}
+
+tr.ciemna a {
+	color: #c4c4c4;
+	text-decoration: underline;
+}
+
+tr.ciemna a:hover {
+	color: #c4c4c4;
+	text-decoration: none;
+}
+
+hr {
+	border: 1px solid #c4c4c4;
+}
+
+div.bok ul {
+	margin: 1px;
+	padding-left: 10px;
+}
+
+div.wpis {
+	padding-left: 20px;
+	display: block;
+}
+
+div.wpis a {
+	color: #666666;
+}
+
+div.opcje {
+	display: none;
+}
+
+span.opcje {
+	display: display;
+	position: relative;
+	left: 25px;
+}
+
+.warning {
+	color: #ee2222;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.thanks {
+	color: #22ee22;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.highlight {
+	color: orange;
+}
+
+.naglowek_wpisu {
+	color: #00a000;
+	font-weight: bold;
+}
